@@ -1,29 +1,29 @@
-.LoginForm {
+.BoardWriteForm {
   margin: 50px auto;
   text-align: center;
 }
 
-.LoginForm form{
+.BoardWriteForm form{
   display: inline-block;
 }
 
-.LoginForm  table {
+.BoardWriteForm  table {
   border-collapse: collapse;
 }
 
-.LoginForm table th, .LoginForm td{
+.BoardWriteForm table th, .BoardWriteForm td{
   padding: 5px;
 
 }
 
-.LoginForm #idDiv, .LoginForm #pwdDiv{
+.BoardWriteForm #subjectDiv, .BoardWriteForm #contentDiv{
   text-align: left;
   color: red;
   font-size: 8pt;
   font-weight: bold;
 }
 
-.LoginForm div{
+.BoardWriteForm div{
   color:red;
   font-weight: bold;
 }

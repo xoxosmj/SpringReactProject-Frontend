@@ -1,0 +1,22 @@
+.BoardList {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.BoardList form{
+  display: inline-block;
+}
+
+.BoardList table {
+  border-collapse: collapse;
+}
+
+.BoardList table th, .BoardList td{
+  padding: 5px;
+
+}
+
+.BoardList div{
+  color:red;
+  font-weight: bold;
+}

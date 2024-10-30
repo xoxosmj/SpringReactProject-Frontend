@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import styles from '../../css/LoginForm.module.css';
 import axios from 'axios';
+import { useNavigate } from '../../../node_modules/react-router-dom/dist/index';
 
 const LoginForm = () => {
 
@@ -10,6 +11,10 @@ const LoginForm = () => {
 
   const [idDiv, setIdDiv] = useState('');
   const [pwdDiv, setPwdDiv] = useState('');
+
+  const [result, setResult] = useState('');
+  const navigate = useNavigate();
+
 
   const onLoginSubmit = (e) => {
     e.preventDefault();
@@ -24,17 +29,14 @@ const LoginForm = () => {
       setPwdDiv('비밀번호 입력');
 
     } else {
-      axios.get(`http://localhost:8080/Spring/member/login?변수=값&변수=값`)
-        .then(res => alert(res.data))
+      axios.get(`http://localhost:8080/Spring/member/login?id=${id}&pwd=${pwd}`, {withCredentials: true})
+        .then(res => { 
+          //alert(res.data);
+          res.data === 'success' ? navigate('/') : setResult('아이디 혹은 비밀번호가 틀렸습니다');
+        })
       
 
     }
-
-
-  }
-
-  const onInput = (e) => {
-    const { name, value } = e.target;
 
 
   }
@@ -71,6 +73,8 @@ const LoginForm = () => {
           </tbody>
           <tfoot></tfoot>
         </table>
+        <br/>
+        <div>{result}</div>
       </form>
     </div>
   );
